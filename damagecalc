@@ -1,0 +1,193 @@
+local Main = Instance.new("ScreenGui")
+local GuiFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Fist = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local Calculate = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local FistQi = Instance.new("TextBox")
+local UICorner_4 = Instance.new("UICorner")
+
+Main.Name = "Main"
+Main.Parent = game.CoreGui
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+GuiFrame.Name = "GuiFrame"
+GuiFrame.Parent = Main
+GuiFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+GuiFrame.Position = UDim2.new(0.01, 0, 0.27, 0)
+GuiFrame.Size = UDim2.new(0, 135, 0, 150)
+
+UICorner.Parent = GuiFrame
+
+Fist.Name = "Fist"
+Fist.Parent = GuiFrame
+Fist.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
+Fist.Position = UDim2.new(0.035, 0, 0.05, 0)
+Fist.Size = UDim2.new(0, 125, 0, 45)
+Fist.Font = Enum.Font.GothamBold
+Fist.PlaceholderColor3 = Color3.fromRGB(255,255,255)
+Fist.PlaceholderText = "Qa Fist"
+Fist.Text = ""
+Fist.TextColor3 = Color3.fromRGB(255,255,255)
+Fist.TextSize = 20.000
+Fist.TextStrokeTransparency = 0.000
+
+UICorner_2.Parent = Fist
+
+FistQi.Name = "FistQi"
+FistQi.Parent = GuiFrame
+FistQi.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
+FistQi.Position = UDim2.new(0.035, 0, 0.37, 0)
+FistQi.Size = UDim2.new(0, 125, 0, 45)
+FistQi.Font = Enum.Font.GothamBold
+FistQi.PlaceholderColor3 = Color3.fromRGB(255,255,255)
+FistQi.PlaceholderText = "Qi Fist"
+FistQi.Text = ""
+FistQi.TextColor3 = Color3.fromRGB(255,255,255)
+FistQi.TextSize = 20.000
+FistQi.TextStrokeTransparency = 0.000
+
+UICorner_2.Parent = FistQi
+
+Calculate.Name = "Calculate"
+Calculate.Parent = GuiFrame
+Calculate.BackgroundColor3 = Color3.fromRGB(100, 0, 0)
+Calculate.Position = UDim2.new(0.035, 0, 0.68, 0)
+Calculate.Size = UDim2.new(0, 125, 0, 45)
+Calculate.Font = Enum.Font.GothamBold
+Calculate.Text = "Calculate"
+Calculate.TextColor3 = Color3.fromRGB(255,255,255)
+Calculate.TextSize = 20.000
+Calculate.TextStrokeTransparency = 0.000
+
+UICorner_3.Parent = Calculate
+
+Calculate.MouseButton1Click:Connect(function()
+    wait()
+    local DamageR = Fist.Text * 3.6
+    local DamageR2 = DamageR / 1000
+    local DamageF = Fist.Text * 2.4
+    local DamageF2 = DamageF / 1000
+    local DamageC = Fist.Text * 1.2
+    local DamageC2 = DamageC / 1000
+    local MaxStack = DamageR * 6
+    local MaxStack2 = MaxStack / 1000
+    
+    if DamageR >= 1000 then
+     game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageR2 .."Qi Damage with R",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    else
+             game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageR .."Qa Damage with R",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    end
+    if DamageF >= 1000 then
+    game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageF2 .. "Qi Damage with F",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    else
+         game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageF .. "Qa Damage with F",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    end
+    if DamageC >= 1000 then
+    game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageC2 .. "Qi Damage with C",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    else
+        game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = DamageC .. "Qa Damage with C",
+            Color = Color3.fromRGB(0, 255, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    end
+    if MaxStack >= 1000 then
+        game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = MaxStack2 .. "Qi Damage with max stack",
+            Color = Color3.fromRGB(255, 0, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    else 
+         game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = MaxStack .. "Qa Damage with max stack",
+            Color = Color3.fromRGB(255, 0, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+end
+end)
+
+Calculate.MouseButton1Click:Connect(function()
+    wait()
+    local QiDamageR = FistQi.Text * 3.6
+    local QiDamageF = FistQi.Text * 2.4
+    local QiDamageC = FistQi.Text * 1.2
+    local QiMaxStack = QiDamageR * 6
+     game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = QiDamageR .."Qi Damage with R",
+            Color = Color3.fromRGB(255, 175, 20), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = QiDamageF .. "Qi Damage with F",
+            Color = Color3.fromRGB(255, 175, 20), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+    game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = QiDamageC .. "Qi Damage with C",
+            Color = Color3.fromRGB(255, 175, 20), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+     game.StarterGui:SetCore( 
+        "ChatMakeSystemMessage",  { 
+            Text = QiMaxStack .. "Qi Damage with max stack",
+            Color = Color3.fromRGB(255, 0, 0), 
+            Font = Enum.Font.Arial, 
+            FontSize = Enum.FontSize.Size24 
+        } 
+    )
+end)
